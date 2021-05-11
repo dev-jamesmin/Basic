@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h> 
-//단어 개수 출력 1
-void showWordsCount (){
+
+void wordsLength (){
     
     const char *words[4] = {"car" , "my book" , "working" , "running"};
     
     int wordCount = 4;
     
-    printf("showWordsCount:");
+    printf("wordsLength:");
     printf("\n");
     
     for (int i = 0; i < wordCount; i++) {
@@ -18,14 +18,13 @@ void showWordsCount (){
     printf("\n");
 }
 
-//단어 개수 출력 2
-void showWordsCount2 (){
+void sentencesLength (){
     
     const char *words[4] = {"my \"big\" car " , "my \"cook\" book" , "working \"hard\" " , " \"happy\" running "};
     
     int wordCount = 4;
     
-    printf("showWordsCount2:");
+    printf("sentencesLength:");
     printf("\n");
 
     for (int i = 0; i < wordCount; i++) {
@@ -36,10 +35,8 @@ void showWordsCount2 (){
     printf("\n");
 }
 
-//단어 개수 출력 3
-void showWordsCount3 (){
+void readTextFile (){
     
-
     FILE *wordFile = fopen("words.txt", "r");
     char word[100];
     
@@ -67,14 +64,12 @@ void showWordsCount3 (){
 
 int main(int argc, const char * argv[]) {
     
-    //단어 개수 읽기
-    showWordsCount();
+ 
+    wordsLength();
     
-    //단어 개수 읽기 2.
-    showWordsCount2();
+    sentencesLength();
     
-    //단어 개수 읽기 3.
-    showWordsCount3();
+    readTextFile();
     
     
     //단어개수 읽기 4
@@ -83,21 +78,21 @@ int main(int argc, const char * argv[]) {
         return 1;
     }
     
-    // FILE *wordFile = fopen(argv[1], "r");
+    FILE *wordFile = fopen(argv[1], "r");
     
     char word[100];
     
-    // while (fgets(word, 100, wordFile)) {
+    while (fgets(word, 100, wordFile)) {
         
-    //     //printf("%lu \n" , strlen(word));
+        //printf("%lu \n" , strlen(word));
         
-    //     word[strlen(word) -1] = '\0';
+        word[strlen(word) -1] = '\0';
         
-    //     NSLog(@"%s 단어 개수는 %lu 개 입니다." , word , strlen(word));
+        printf("%s 단어 개수는 %lu 개 입니다." , word , strlen(word));
         
-    // }
+    }
     
-    // fclose(wordFile);
+    fclose(wordFile);
     
     printf("\n");
     
