@@ -79,7 +79,7 @@ int main(int argc, const char * argv[]) {
     
     //단어개수 읽기 4
     if (argc == 1) {
-        // NSLog(@"인자에 파일명을 입력하세요");
+        printf("인자에 파일명을 입력하세요");
         return 1;
     }
     
